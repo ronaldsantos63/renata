@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Love Rain Animation</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <div class="heart"></div>
-    <p class="message">Renata,
-      <span style="--i:0;" data-text="EU TE AMO!">EU TE AMO!</span>
-      <span style="--i:1;" data-text="minha paz!">minha paz!</span>
-      <span style="--i:2;" data-text="minha vida!">minha vida!</span>
-    </p>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Rain Animation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="heart">
+        <p class="message">
+          Renata,
+          <span style="--i: 0" data-text="EU TE AMO!">EU TE AMO!</span>
+          <span style="--i: 1" data-text="minha paz!">minha paz!</span>
+          <span style="--i: 2" data-text="minha vida!">minha vida!</span>
+        </p>
+      </div>
+    </div>
 
-  <script>
-    function rain() {
-      let heart = document.querySelector('.heart');
-      let e = document.createElement('div');
-      e.classList.add('drop');
-      heart.appendChild(e);
+    <script>
+      function rain() {
+        let heart = document.querySelector(".heart")
+        let e = document.createElement("div")
+        e.classList.add("drop")
+        heart.appendChild(e)
 
-      // Heart width equal 300px
-      let left = Math.floor(Math.random() * 300);
-      let duration = Math.random() * 0.5;
+        // Heart width equal 300px
+        let left = Math.floor(Math.random() * 300)
+        let duration = Math.random() * 0.5
 
-      e.style.left = left + 'px';
-      e.style.animationDuration = 1+duration+'s';
+        e.style.left = left + "px"
+        e.style.animationDuration = 1 + duration + "s"
 
-      setTimeout(() => {
-        heart.removeChild(e);
-      }, 5000);
-    }
+        setTimeout(() => {
+          heart.removeChild(e)
+        }, 5000)
+      }
 
-    setInterval(() => {
-        rain();
-      }, 50);
-  </script>
-</body>
+      setInterval(() => {
+        rain()
+      }, 50)
+    </script>
+  </body>
 </html>

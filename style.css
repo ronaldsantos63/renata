@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -32,7 +32,7 @@ body {
   font-weight: 600;
   color: #fff;
   top: 40px;
-  left: -280px;
+  left: 50px;
   z-index: 1000000;
 }
 
@@ -40,7 +40,20 @@ body {
   position: relative;
   color: rgba(255, 255, 255, 0.1);
   animation: displayText 9s infinite;
+  -webkit-animation: displayText 9s infinite;
   animation-delay: calc(-3s * var(--i));
+  -webkit-animation-delay: calc(-3s * var(--i));
+}
+
+@keyframes displayText {
+  0% {
+    display: inline-block;
+  }
+
+  33.33%,
+  100% {
+    display: none;
+  }
 }
 
 .message span::before {
@@ -52,9 +65,12 @@ body {
   height: 100%;
   color: #01fe87;
   overflow: hidden;
+  -webkit-overflow: hidden;
   border-right: 4px solid #01fe87;
   filter: drop-shadow(0 0 5px #01fe87) drop-shadow(0 0 25px #01fe87);
+  -webkit-filter: drop-shadow(0 0 5px #01fe87) drop-shadow(0 0 25px #01fe87);
   animation: moveCursor 3s linear infinite;
+  -webkit-animation: moveCursor 3s linear infinite;
 }
 
 @keyframes moveCursor {
@@ -67,17 +83,6 @@ body {
   70%,
   90% {
     width: 100%;
-  }
-}
-
-@keyframes displayText {
-  0% {
-    display: inline-block;
-  }
-
-  33.33%,
-  100% {
-    display: none;
   }
 }
 
